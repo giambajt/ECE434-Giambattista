@@ -4,20 +4,21 @@ import pygame, sys
 from pygame.locals import *
 
 pygame.init()
-
+#check if the command line was run with 2 arguments, otherwise default the etch window size
 if len(sys.argv) == 3:
     etchx = int(sys.argv[1])
     etchy = int(sys.argv[2])
 else:
     etchx=600
     etchy=400
+#general setup for pygame and some user variables
 screen = pygame.display.set_mode((600,400))
 x= etchx//2
 y= etchy//2
-opening_screen=1
+opening_screen=1#binary value that dictates whether the computer is on the opening screen or the etch screen
 black= (0,0,0)
 white = (255,255,255)
-
+#setup the basics for pygame and all of the text instructions on the opening screen
 clock = pygame.time.Clock()
 screen.fill(white)
 pygame.display.set_caption('etch_a_sktech')
@@ -36,11 +37,14 @@ insTextRect3 = instructionText3.get_rect()
 insTextRect3.center = (300, 200+60)
 
 
-
+#main loop
 while 1:
+    #makes game run at 60 FPS and updates the screen
     clock.tick(60)
     pygame.display.update()
+    #etch screen
     if opening_screen == 0:
+        #etch window event loop that draws the sketches and reads for keyboard inputs
         pygame.draw.circle(screen, black, (x,y),2)
         key = pygame.key.get_pressed()
         if key[pygame.K_RIGHT]:x+=1
@@ -55,13 +59,17 @@ while 1:
                 sys.exit()
             
             elif event.type == KEYDOWN and event.key == K_SPACE:
-                screen.fill(white)
+                screen.fill(white)#screen 'shake'
+    #opening screen
     elif opening_screen == 1:
+        #display all of the instruction texts
         screen.blit(text,textRect)
         screen.blit(instructionText, insTextRect)
         screen.blit(instructionText2, insTextRect2)
         screen.blit(instructionText3, insTextRect3)
+        #event loop that checks for keyboard presses
         for event in pygame.event.get():
+            #When space is pressed, setup the screen for the etch window
             if event.type == KEYDOWN and event.key == K_SPACE:
                 screen = pygame.display.set_mode((etchx,etchy))
                 screen.fill(white)
@@ -70,4 +78,3 @@ while 1:
                 sys.exit()
             elif event.type == KEYDOWN and event.key == K_ESCAPE:
                 sys.exit()
-
