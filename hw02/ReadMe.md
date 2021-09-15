@@ -1,4 +1,4 @@
-###Measuring a gpio pin on an Oscilloscope using togglegpio.sh
+### Measuring a gpio pin on an Oscilloscope using togglegpio.sh
 1. Min voltage is 0V and Max voltage is 3.3V
 2. O-scope says frequency is 4.12 Hz which is a period of 0.245 seconds
 3. It's almost 2.5x off of the 100ms period
@@ -7,7 +7,6 @@
 6. ToggleGPIO.sh Table
 
  Sleep Time (s)  | Period (s) | CPU Usage (%)
-
 -----------|-------------|----------
 0.1|0.245|4
 0.05|0.141|5.5
@@ -22,7 +21,7 @@
 10. Using a sleep of 0.0001 the frequency went up about 17 Hz from the last question
 11. 70 Hz seems to be the fastest I can get it
 
-###Python Toggling
+### Python Toggling
 1. The frequency is around 6.2 KHz and the period is 0.000161 seconds
 2. around 95% of the CPU
 3. Comparison Table
@@ -31,7 +30,7 @@ Shell fastest frequency (Hz) | Python Fastest Frequency (Hz) | C Fastest Frequen
 ----------------------------|-------------------------------|--------------------------
 70 Hz|6.2kHz|158kHz
 
-###GPIOD Toggling
+### GPIOD Toggling
 
 Python 1 bit frequency (Hz) | Python 2 bit Frequency (Hz) | C 1 bit frequency (Hz) | C 2 bit frequency (Hz)
 ----------|---------|--------|----------
