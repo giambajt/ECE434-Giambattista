@@ -26,13 +26,13 @@
 2. around 95% of the CPU
 3. Comparison Table
 
-Shell fastest frequency (Hz) | Python Fastest Frequency (Hz) | C Fastest Frequency (Hz)
+Shell fastest frequency (Hz) | Python Fastest Frequency (kHz) | C Fastest Frequency (kHz)
 ----------------------------|-------------------------------|--------------------------
-70 Hz|6.2kHz|158kHz
+70|6.2|158
 
 ### GPIOD Toggling
 
-Python 1 bit frequency (Hz) | Python 2 bit Frequency (Hz) | C 1 bit frequency (Hz) | C 2 bit frequency (Hz)
+Python 1 bit frequency (kHz) | Python 2 bit Frequency (kHz) | C 1 bit frequency (kHz) | C 2 bit frequency (kHz)
 ----------|---------|--------|----------
 57| 53 | 280 | 265 
 
