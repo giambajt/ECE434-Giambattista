@@ -1,0 +1,9 @@
+Red LED 1: P9_11 GPIO0[30] 30
+Green LED 2: P9_13 GPIO0[31] 31
+Red LED 3: P9_15 GPIO1[16] 48
+Green LED 4: P9_17 GPIO0[5] 5
+
+Button 1: P9_19 GPIO0[13] 13
+Button 2: P9_21 GPIO0[3] 3
+Button 3: P9_23 GPIO1[17] 49
+Button 4: P9_22 GPIO0[2] 2
