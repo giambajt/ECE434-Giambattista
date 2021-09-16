@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+import Adafruit_BBIO.GPIO as GPIO
 import pygame, sys
 from pygame.locals import *
 
@@ -13,8 +13,37 @@ else:
     etchy=400
 #general setup for pygame and some user variables
 screen = pygame.display.set_mode((600,400))
+left_button = "P9_19"
+up_button = "P9_21"
+down_button = "P9_23"
+right_button = "P9_22"
+GPIO.setup(left_button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(up_button, GPIO.IN,pull_up_down =  GPIO.PUD_DOWN)
+GPIO.setup(down_button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(right_button, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+
 x= etchx//2
 y= etchy//2
+
+def read_pin(pin):
+    global x
+    global y
+    if pin == up_button:
+        y-=1
+    elif pin == down_button:
+        y+=1
+    elif pin == left_button:
+        x-=1
+    elif pin == right_button:
+        x+=1
+
+
+
+#GPIO.add_event_detect(up_button, GPIO.BOTH, turn_LED_ON)
+#GPIO.add_event_detect(down_button, GPIO.BOTH, turn_LED_ON2)
+#GPIO.add_event_detect(left_button, GPIO.BOTH, turn_LED_ON3)
+#GPIO.add_event_detect(right_button, GPIO.BOTH, turn_LED_ON4)
+
 opening_screen=1#binary value that dictates whether the computer is on the opening screen or the etch screen
 black= (0,0,0)
 white = (255,255,255)
@@ -47,10 +76,10 @@ while 1:
         #etch window event loop that draws the sketches and reads for keyboard inputs
         pygame.draw.circle(screen, black, (x,y),2)
         key = pygame.key.get_pressed()
-        if key[pygame.K_RIGHT]:x+=1
-        if key[pygame.K_LEFT]:x-=1
-        if key[pygame.K_UP]:y-=1
-        if key[pygame.K_DOWN]:y+=1
+        if key[pygame.K_RIGHT] or GPIO.input(right_button):x+=1
+        if key[pygame.K_LEFT] or GPIO.input(left_button):x-=1
+        if key[pygame.K_UP] or GPIO.input(up_button):y-=1
+        if key[pygame.K_DOWN] or GPIO.input(down_button):y+=1
     
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
