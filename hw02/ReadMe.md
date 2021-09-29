@@ -36,3 +36,22 @@ Python 1 bit frequency (kHz) | Python 2 bit Frequency (kHz) | C 1 bit frequency 
 ----------|---------|--------|----------
 57| 53 | 280 | 265 
 
+
+
+# hw02 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2/2 | Buttons and LEDs 
+|  7/7 | Etch-a-Sketch works
+|      | Measuring a gpio pin on an Oscilloscope 
+|  2/2 | Questions answered
+|  4/4 | Table complete
+|  2/2 | gpiod
+|      | Security
+|  1/1 | ssh port
+|  1/1 | iptables
+|  1/1 | fail2ban
+| 20/20   | **Total**
+
+Nice Videos
