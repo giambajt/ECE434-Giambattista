@@ -1,3 +1,3 @@
-HW06 questions
+Welcome to my Git repo!
 
 
