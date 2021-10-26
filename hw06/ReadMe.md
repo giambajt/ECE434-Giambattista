@@ -26,3 +26,17 @@ The non critical IRQ is keeping the external event from running.  In this figure
 
 
 
+# hw06 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2/2 | Project 
+|  5/5 | Questions
+|  4/4 | PREEMPT_RT
+|  2/2 | Plots to 500 us
+|  3/5 | Plots - Heavy/Light load | *Light load is missing*
+|  2/2 | Extras
+| 18/20 | **Total**
+
+*My comments are in italics. --may*
+
